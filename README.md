@@ -9,7 +9,7 @@ Kami percaya bahwa inti dari live streaming adalah koneksi manusia. Proyek ini a
 
 ---
 
-## ✨ Visi & Filosofi (Marketing 3.0)
+## ✨ Visi & Filosofi 
 
 Di era digital yang serba terhubung, kami tidak hanya membangun *fitur*, kami membangun *jembatan*. Jembatan antara dunia virtual Grand Theft Auto V dan denyut nadi komunitas live stream Anda.
 
@@ -23,14 +23,14 @@ Di era digital yang serba terhubung, kami tidak hanya membangun *fitur*, kami me
 
 Mod ini dirancang dengan arsitektur modular yang kuat, memastikan setiap komponen bekerja secara harmonis untuk menciptakan pengalaman yang mulus dan kaya fitur.
 
-*   **🏔️ Event Pendakian Terstruktur:** Sebuah perjalanan epik dari kaki gunung menuju puncak dengan sistem checkpoint yang jelas (`CheckpointManager.cs`) dan state machine yang tangguh (`HikingEventStateMachine.cs`) untuk mengelola setiap fase petualangan.
-*   **🔗 Integrasi Webhook Real-Time:** Jantung dari interaktivitas. Sistem `GiftWebhookListener.cs` secara andal menerima event dari TikTok Live (melalui server perantara), mengubah aksi audiens menjadi perintah dalam game.
-*   **👥 Representasi Audiens Dinamis:** Penonton tidak hanya menonton, mereka hadir! `HikerSpawner.cs` secara cerdas memunculkan NPC yang merepresentasikan penonton, lengkap dengan nama mereka yang ditampilkan secara stabil oleh `HikerNameDisplay.cs` dan `TextRenderingManager.cs`.
-*   **🎬 Kamera Sinematik Cerdas:** Tingkatkan nilai produksi stream Anda dengan `CustomCameraManager.cs`. Sistem ini menyediakan kamera dinamis yang mengikuti pemain, dengan perspektif yang dapat diubah dan sapuan sinematik 360 derajat otomatis yang dramatis.
-*   **💥 Event Spesial Penuh Aksi:** Ciptakan momen tak terlupakan! Dari serangan helikopter yang dipicu oleh penonton (`CommandWebhookHeliAttack.cs`, `HeliAttackGiftWebhookHandler.cs`) hingga perayaan kembang api yang spektakuler (`SpecialCommandHandler.cs`, `StarsNoTextHandler.cs`).
-*   **🔊 Manajemen Audio Imersif:** Setiap momen penting diiringi dengan audio yang pas. `AudioManager.cs` mengelola pemutaran musik dan efek suara kustom, meningkatkan atmosfer secara signifikan.
-*   **⚙️ Konfigurasi & Kontrol Penuh:** Sesuaikan pengalaman dengan mudah melalui file `HikingEventMod.ini`. `KeyHandler.cs` menyediakan kontrol penuh bagi streamer untuk mengelola jalannya event.
-*   **🛡️ Sistem yang Kuat & Anti-Gagal:** Dibangun dengan mempertimbangkan stabilitas. Fitur seperti antrian spawn (`SpawnQueueManager.cs`), deteksi pemain macet, dan logika pembersihan (`Cleanup`) memastikan event berjalan lancar bahkan dalam situasi tak terduga.
+*   **🏔️ Event Pendakian Terstruktur:** Sebuah perjalanan epik dari kaki gunung menuju puncak dengan sistem checkpoint yang jelas  dan state machine yang tangguh  untuk mengelola setiap fase petualangan.
+*   **🔗 Integrasi Webhook Real-Time:** Jantung dari interaktivitas. Sistem secara andal menerima event dari TikTok Live (melalui server perantara), mengubah aksi audiens menjadi perintah dalam game.
+*   **👥 Representasi Audiens Dinamis:** Penonton tidak hanya menonton, mereka hadir!  secara cerdas memunculkan NPC yang merepresentasikan penonton, lengkap dengan nama mereka yang ditampilkan secara stabil oleh  dan .
+*   **🎬 Kamera Sinematik Cerdas:** Tingkatkan nilai produksi stream Anda dengan Sistem ini menyediakan kamera dinamis yang mengikuti pemain, dengan perspektif yang dapat diubah dan sapuan sinematik 360 derajat otomatis yang dramatis.
+*   **💥 Event Spesial Penuh Aksi:** Ciptakan momen tak terlupakan! Dari serangan helikopter yang dipicu oleh penonton hingga perayaan kembang api yang spektakuler .
+*   **🔊 Manajemen Audio Imersif:** Setiap momen penting diiringi dengan audio yang pas.  mengelola pemutaran musik dan efek suara kustom, meningkatkan atmosfer secara signifikan.
+*   **⚙️ Konfigurasi & Kontrol Penuh:** Sesuaikan pengalaman dengan mudah melalui file  menyediakan kontrol penuh bagi streamer untuk mengelola jalannya event.
+*   **🛡️ Sistem yang Kuat & Anti-Gagal:** Dibangun dengan mempertimbangkan stabilitas. Fitur seperti antrian spawn , deteksi pemain macet, dan logika pembersihan  memastikan event berjalan lancar bahkan dalam situasi tak terduga.
 
 ---
 
@@ -39,20 +39,20 @@ Mod ini dirancang dengan arsitektur modular yang kuat, memastikan setiap kompone
 Proyek ini bukan hanya tentang fitur yang terlihat, tetapi juga tentang keunggulan teknis di baliknya. Ini adalah bukti komitmen terhadap kualitas, skalabilitas, dan praktik pengembangan perangkat lunak modern.
 
 *   **Arsitektur Modular (Single Responsibility Principle):** Setiap kelas memiliki tanggung jawab yang jelas dan tunggal.
-    *   `AudioManager.cs`: Terisolasi untuk semua hal terkait suara.
-    *   `TextRenderingManager.cs`: Sistem rendering teks terpusat yang stabil dan efisien, mencegah *flickering* dan mengelola *resource* dengan cerdas.
-    *   `HeliAttackGiftWebhookHandler.cs` vs `CommandWebhookHeliAttack.cs`: Logika serangan helikopter dipisahkan menjadi dua handler berbeda untuk pemicu yang berbeda, menunjukkan desain yang bersih dan mudah diperluas.
+    *   Terisolasi untuk semua hal terkait suara.
+    *   Sistem rendering teks terpusat yang stabil dan efisien, mencegah *flickering* dan mengelola *resource* dengan cerdas.
+    *   Logika serangan helikopter dipisahkan menjadi dua handler berbeda untuk pemicu yang berbeda, menunjukkan desain yang bersih dan mudah diperluas.
 
-*   **Manajemen State yang Kuat:** Penggunaan *State Machine* (`HikingEventStateMachine.cs`) memastikan transisi antar fase event (misalnya, dari `HikingToGatheringPoint` ke `PlayerMovingToFinalSummit`) berjalan dengan teratur dan dapat diprediksi, mencegah bug dan kondisi tak terduga.
+*   **Manajemen State yang Kuat:** Penggunaan *State Machine*  memastikan transisi antar fase event (misalnya, dari berjalan dengan teratur dan dapat diprediksi, mencegah bug dan kondisi tak terduga.
 
-*   **Optimisasi Performa:** Kami sadar bahwa memunculkan banyak NPC dapat membebani game. Oleh karena itu, `HikingEventMod.cs` mengimplementasikan *staggering update* (memperbarui hanya sebagian kecil NPC setiap *tick*), memastikan performa tetap terjaga bahkan dengan banyak penonton yang berpartisipasi.
+*   **Optimisasi Performa:** Kami sadar bahwa memunculkan banyak NPC dapat membebani game. Oleh karena itu,  mengimplementasikan *staggering update* (memperbarui hanya sebagian kecil NPC setiap *tick*), memastikan performa tetap terjaga bahkan dengan banyak penonton yang berpartisipasi.
 
-*   **Desain yang Dapat Diperluas (Extensibility):** Sistem perintah (`SpecialCommandManager.cs`) dirancang untuk kemudahan ekspansi. Menambahkan interaksi baru dari audiens (misalnya, memunculkan item, mengubah cuaca) dapat dilakukan dengan menambahkan blok `else if` baru tanpa mengganggu logika yang sudah ada.
+*   **Desain yang Dapat Diperluas (Extensibility):** Sistem perintah  dirancang untuk kemudahan ekspansi. Menambahkan interaksi baru dari audiens (misalnya, memunculkan item, mengubah cuaca) dapat dilakukan dengan menambahkan blok `baru tanpa mengganggu logika yang sudah ada.
 
 *   **Pengembangan Berbantuan AI (AI-Assisted Development):**
     > Dalam pengembangan proyek ini, saya secara aktif berkolaborasi dengan **Gemini Code Assist**. AI ini tidak hanya berfungsi sebagai alat bantu, tetapi sebagai mitra strategis dalam proses kreatif dan teknis. Saya memanfaatkannya untuk:
     > *   **Refactoring & Peningkatan Kualitas Kode:** Mengidentifikasi bagian kode yang dapat disederhanakan dan ditingkatkan efisiensinya.
-    > *   **Validasi Arsitektur:** Mendiskusikan ide-ide desain, seperti pemisahan `SpecialCommandHandler` dari `SpecialCommandManager`, untuk memastikan arsitektur yang lebih bersih dan mudah dikelola.
+    > *   **Validasi Arsitektur:** Mendiskusikan ide-ide desain, seperti pemisahan untuk memastikan arsitektur yang lebih bersih dan mudah dikelola.
     > *   **Generasi Dokumentasi & Boilerplate:** Mempercepat proses pengembangan dengan mengotomatiskan pembuatan dokumentasi seperti ini dan kode berulang.
     >
     > Kolaborasi ini menunjukkan kemampuan saya untuk memanfaatkan alat-alat paling canggih dalam industri untuk mencapai hasil yang lebih baik, lebih cepat, dan dengan kualitas yang lebih tinggi. Ini adalah cerminan dari seorang engineer modern yang berfokus pada solusi dan efisiensi.
@@ -102,4 +102,5 @@ Proyek ini bukan hanya tentang fitur yang terlihat, tetapi juga tentang keunggul
 **GTA V: Interactive Hiking Live** adalah sebuah surat cinta untuk komunitas gaming dan streaming. Ini adalah bukti bahwa dengan visi yang tepat dan eksekusi teknis yang solid, kita dapat menciptakan pengalaman yang lebih dalam, lebih bermakna, dan yang terpenting, lebih menyenangkan bersama-sama.
 
 Terima kasih telah menjelajahi proyek ini. Mari kita terus mendaki menuju puncak-puncak baru dalam dunia interaktivitas.
+
 
